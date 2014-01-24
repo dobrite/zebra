@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Dave O. - Creator
+
+# THANKS
+
+    To good coffee!
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    Backbone & Backbone.Marionette
+    Requirejs
+    Rack
+    Heroku
