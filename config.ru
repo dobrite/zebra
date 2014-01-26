@@ -1,14 +1,6 @@
 use Rack::Static,
-  :urls => ["/js", "/css"],
-  :root => "public"
+  :urls => ["/js", "/css", "bower_components"],
+  :root => "public",
+  :index => "index.html"
 
-run lambda { |env|
-  [
-    200,
-    {
-      'Content-Type'  => 'text/html',
-      'Cache-Control' => 'public, max-age=86400'
-    },
-    File.open('public/index.html', File::RDONLY)
-  ]
-}
+run Rack::File.new("public")
