@@ -7,12 +7,7 @@ function (Backbone, MainTemplate) {
     var MainLayout = Backbone.Marionette.Layout.extend({
         tagName: "div",
         className: "row",
-
-        template: {
-            type: 'handlebars',
-            template: MainTemplate
-        },
-
+        template: MainTemplate,
         regions: {
             postsRegion: "#posts"
         }

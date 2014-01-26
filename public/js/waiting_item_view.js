@@ -5,10 +5,7 @@ define([
 function (Backbone, WaitingTemplate) {
 
     var WaitingItemView = Backbone.Marionette.ItemView.extend({
-        template: {
-            type: 'handlebars',
-            template: WaitingTemplate
-        },
+        template: WaitingTemplate
     });
 
     return WaitingItemView;

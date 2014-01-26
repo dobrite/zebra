@@ -1,7 +1,7 @@
 require 'open-uri'
 
 use Rack::Static,
-  :urls => ["/js", "/css", "bower_components"],
+  :urls => ["/js", "/css", "/img", "bower_components"],
   :root => "public",
   :index => "index.html"
 

@@ -1,10 +1,9 @@
 define([
     'backbone',
-    'js/main_layout',
     'backbone.marionette',
+    'js/main_layout',
 ],
-function (Backbone, MainLayout) {
-
+function (Backbone, BackboneMarionette, MainLayout) {
     var App = new Backbone.Marionette.Application();
 
     App.addRegions({

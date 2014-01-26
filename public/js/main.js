@@ -1,12 +1,9 @@
 (function () {
-    'use strict';
-
-    var root = this;
-
-    root.require([
+    define([
         'js/app',
     ],
     function (App) {
         App.start();
+        return App;
     });
-}).call(this);
+}(this));
