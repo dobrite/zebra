@@ -1,24 +1,27 @@
 define([
     'backbone',
+    "underscore",
     'js/post_collection',
-    'js/post_collection_view',
+    'js/post_composite_view',
+    'js/waiting_item_view',
 ],
-function (Backbone, PostCollection, PostCollectionView) {
+function (Backbone, _, PostCollection, PostCompositeView, WaitingItemView) {
 
     var PostController = Backbone.Marionette.Controller.extend({
 
-        initialize: function (mainRegion) {
+        initialize: function (region) {
             var postCollection = new PostCollection();
 
-            postCollectionView = new PostCollectionView({
-                collection: postCollection
+            postCollection.fetch().done(function () {
+                var postCompositeView = new PostCompositeView({
+                    collection: postCollection
+                });
+
+                region.show(postCompositeView);
             });
 
-            postCollection.fetch();
-
-            mainRegion.show(postCollectionView);
-        }
-
+            region.show(new WaitingItemView());
+        },
     });
 
     return PostController;

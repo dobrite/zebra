@@ -5,10 +5,10 @@ define([
 function (Backbone, PostModel) {
 
     var PostCollection =  Backbone.Collection.extend({
-        url: 'http://www.reddit.com/.json?limit=10',
+        url: 'hnproxy',
 
         parse: function (resp, xhr) {
-            return resp.data.children;
+            return resp.items;
         },
 
         model: PostModel,
